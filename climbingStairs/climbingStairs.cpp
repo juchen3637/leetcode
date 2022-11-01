@@ -1,12 +1,22 @@
-//takes too long to run
+//The solution to this question is the sum of the fibonacci sequence between these two functions (n-1) and (n-2)
 
 class Solution {
 public:
     int climbStairs(int n) {
-    if (n == 0) return 0; // if steps equal to 0 then there are 0 ways to climb the stairs
-    if (n == 1) return 1; // if steps equal 1 then there is only 1 possible way to climb the stairs, 1 step
-    if (n == 2) return 2; // if steps equal 2 then there is only 2 possible ways to climb the stairs, 1 step + 1 step & 2 step
+        if (n == 0 || n == 1 || n == 2) { // if number of steps equal any of these numbers then return the same number because that is the only amount of ways you can climb the stairs
+            return n;
+        }
 
-    return climbStairs (n-1) + climbStairs(n-2); //
+        else {
+            int previous = 1; // this represents 
+            int current = 2; // this 
+            for (int i = 2; i < n; i++) { //iterates through the for loop depending on n
+                int temp = current; // makes variable temp equal to current
+                current += previous; // continuously add on 
+                previous = temp; //
+            }
+
+            return current; //
+        }
     }
 };
